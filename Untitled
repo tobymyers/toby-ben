@@ -1,0 +1,4 @@
+#script to connect to gdax
+import gdax
+public_client = gdax.PublicClient()
+print(public_client.get_product_ticker(product_id='ETH-USD'))

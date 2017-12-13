@@ -1,0 +1,32 @@
+#design
+
+connect with gdax AuthenticatedClient
+get_product_historic_rates for all currencies over x period of time to calculate average --do this later
+
+for each currency?
+get_orders (pass "done" ) and get most recent done order (maybe know this beforehand?)
+get current spot price with either get_product_trades (latest trades) or get_product_ticker (latest offers)
+
+decide whether or not to buy or sell (this is the heart of it) v1 do this for each currency
+    find percentage change from last sale
+    if it's up x% check with me about selling:
+          if I say yes, sell
+    if it's down x%, check with me about buying:
+          if I say yes:
+              scrape off all the profits and buy with the rest (right now buy amount is constant and we scrape profits)
+
+^^this is pretty naive b/c it only focuses on profits
+
+O's suggestion:
+if it's dropped 10%:
+     start counting the drop and wait till it has risen back up 2 percent
+     this could look like a running tally of the derivative, and when derivative changes from positive to negative, wait for a 2% change the other direction
+
+same if it's going up
+
+other option would just be to say fuck it, this $2000 can be thrown away, and go all in every time
+
+a better version of this would compare across the three currencies, and would say:
+  ok so bitcoin is down 5% AND ethereum is up 10% so if I sell between the two I'll win.
+  always looking for a 10% spread or something similar
+  
