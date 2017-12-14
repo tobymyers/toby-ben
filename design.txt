@@ -29,4 +29,35 @@ other option would just be to say fuck it, this $2000 can be thrown away, and go
 a better version of this would compare across the three currencies, and would say:
   ok so bitcoin is down 5% AND ethereum is up 10% so if I sell between the two I'll win.
   always looking for a 10% spread or something similar
-  
+
+
+Ben's model idea:
+
+
+every five seconds record price and divide by last recorded price,
+keep a running tally of percentage change since last peak
+
+price at last transaction
+was it a buy or a sell
+
+if it drops more than x %:  #gotta figure out how to round it
+    record price 1
+    wait 5 seconds
+    record price 2 and divide p1/p2 as %change
+    if %change > 1, wait because it's still dropping
+    if %change = 1 it's an inflection point
+    if %change is < 1 we suspect it's going back up, so we buy
+        optional: count up number of times it's less than 1:
+        if it's > 1 for more than 4 cycles, buy
+
+
+
+
+    store %change1
+
+    loop through this
+
+
+    if p1/p2 -  p2/p3 <= 0:
+        do nothing
+    if p1/p2 > 0:
