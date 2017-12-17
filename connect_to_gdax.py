@@ -14,13 +14,3 @@ account_id = os.environ.get("ACCOUNT_ID")
 sandbox_url = "https://api-public.sandbox.gdax.com"
 
 auth_client = gdax.AuthenticatedClient(api_key, api_secret, passphrase, api_url = "https://api-public.sandbox.gdax.com") #connected to sandbox url for testing
-print(auth_client.get_time())
-
-#does not work right now (throwing invalid API key error, due to sandbox
-depositParams = {
-        'amount': '25.00', # Currency determined by account specified
-        'coinbase_account_id': account_id
-}
-
-auth_client.deposit(depositParams)
-print("yay")

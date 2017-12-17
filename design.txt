@@ -61,3 +61,21 @@ if it drops more than x %:  #gotta figure out how to round it
     if p1/p2 -  p2/p3 <= 0:
         do nothing
     if p1/p2 > 0:
+
+
+#good stuff from Zack.  High level class running all the time is do_the_things (see below)
+
+#mid level extensions of classes e.g high_risk_strategy, low_risk_strategy, mid_risk_strategy that extend a low level class called base_strategy,
+so they each have their own internal logic but the same exact __init__ params.
+
+e.g.Class high_risk_strategy:
+          buy at 10%
+          sell at 2% down
+
+
+
+
+do_the_things(method, other stuff)
+    object = methodx
+    object.buy
+    object.sell
