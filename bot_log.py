@@ -4,8 +4,9 @@ import datetime
 class bot_log(BaseModel):
         id = PrimaryKeyField()
         timestamp = DateTimeField(default=datetime.datetime.now())
-        trade_model = CharField()
-        buy0_sell1 = BooleanField()
+        when_strategy = CharField()
+        how_much_strategy = CharField()
+        buy_or_sell = CharField()
         amt_USD = FloatField()
         amt_crypto = FloatField()
-        crypto_name = CharField()
+        product_name = CharField()

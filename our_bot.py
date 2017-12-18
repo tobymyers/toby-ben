@@ -3,15 +3,16 @@ from bot_log import *
 
 class OurBot(gdax.AuthenticatedClient): #something similar should inherit from authclient
 
-    def log_in_db(self, trade_model, buy0_sell1, amt_USD, amt_crypto, crypto_name):
-        new_log = bot_log(trade_model, buy0_sell1, amt_USD, amt_crypto, crypto_name)
+    def log_in_db(self, when_strategy, how_much_strategy, buy_or_sell, amt_USD, amt_crypto, product_name):
+        new_log = bot_log(when_strategy = when_strategy, how_much_strategy = how_much_strategy, buy_or_sell = buy_or_sell, amt_USD = amt_USD, amt_crypto = amt_crypto, product_name = product_name)
         new_log.save()
 
 
-    def implement_strategy(self, strategy_object, last_trade, last_order):
+    def implement_strategy(self, strategy_object, last_trade, last_fill):
         self.strategy = strategy_object
+        side = "dummy"
         buy_choice = self.strategy.choose_to_buy()
         sell_choice = self.strategy.choose_to_sell()
-        return buy_choice, sell_choice
+        return buy_choice, sell_choice, side
 
     #get_product_ticker()

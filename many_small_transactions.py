@@ -1,13 +1,13 @@
-import base_strategy
+from base_when_strategy import *
 
 class ManySmall(BaseWhenStrategy):
 
     def choose_to_buy(self):
-        if self.short_term > small amount  and last transaction was a sell:
+        #if self.short_term > small amount  and last transaction was a sell:
         #all complicated code lives here
-        return true or return false depending
-        
+        return True, "buy"
+
     def choose_to_sell(self):
-        if self.short_term > small amount  and last transaction was a sell:
+        #if self.short_term > small amount  and last transaction was a sell:
         #all complicated code lives here
-        return true or return false depending
+        return True, "sell"
